@@ -10,6 +10,7 @@ app.set('views', __dirname + '/public');
 
 app.get('/', function(request, response) {
   var env = process.env.APP_ENV;
+  console.log("Running on environment:" + env);
   if (env == 'staging') {
     var envName = 'staging'
   } else if (env == 'production') {
