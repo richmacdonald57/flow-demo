@@ -8,9 +8,10 @@
 		<div class="vh-100 w-100 flex justify-center">
 			<div class="flex flex-column items-center justify-center">
 				<h2 class="fw4 blue">Minor Corp Warehouse Webapp</h2>
-				<p class="silver ma0">Built with love, by Richard MacDonald</p>
+				<p class="silver ma0">Built, with love, by Richard MacDonald</p>
 				<div class="pt5">
-					<span id="env" class="white pv1 ph2 br-pill bg-light-blue"></span>
+					<!--<span id="env" class="white pv1 ph2 br-pill bg-light-blue"></span>-->
+					<span id="env" class="white pv1 ph2 br-pill"></span>
 				</div>
 			</div>
 		</div>
@@ -18,6 +19,15 @@
 		<script>
 			var env = "<%= env %>";
 			document.getElementById("env").innerHTML = env;
+			 if (env == "production") {
+			 	document.getElementById("env").style.backgroundColor = "red";
+			 }
+			else if (env == "staging") {
+			 	document.getElementById("env").style.backgroundColor = "blue";			
+			}
+			else {
+			 	document.getElementById("env").style.backgroundColor = "green";			
+			}
 		</script>
 	</body>
 </html>
